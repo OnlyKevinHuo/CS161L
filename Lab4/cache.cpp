@@ -1,10 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <math.h>
+#include <iomanip>
+#include <string>
+#include <sstream>
+using namespace std;
+//#define  BLOCK_SIZE     16
 
-#define  BLOCK_SIZE     16
-#define  CACHE_SIZE     16384
-
-int main () {
+/*
    // build cache
    int number_of_blocks = CACHE_SIZE / BLOCK_SIZE;
    std::vector<unsigned long long> cache;
@@ -32,6 +36,24 @@ int main () {
    printf("total accesses: %d\n", total);
    printf("miss rate:      %0.2lf\n", miss_rate * 100.0);
 
-   return 0;
-}
+*/
 
+int main(){
+  //int caches[5] = {1024, 2048, 4096, 8192, 16384};
+  //int assoc[5] = {1, 2, 4, 8};
+  //int tagSize;
+  //int indexSize;
+  ofstream outtie("output.txt");
+  if(outtie.is_open()){
+    outtie << "        LRU Replacement Policy\n";
+    outtie << left;
+    outtie << setw(3) << "   " << setw(7) << "1024" << setw(7) << "2048" << setw(7) << "4096" << setw(7) 
+	   << "8192" << setw(7) << "16384" << endl;   
+  //for(int i = 0; i < 5; i++){
+
+
+  //}
+  //
+    outtie.close();
+  }
+} 
